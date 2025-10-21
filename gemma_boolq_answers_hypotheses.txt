@@ -1,0 +1,44 @@
+<hypotheses>
+Why LLM Gets Questions Right:
+
+- Clear Lexical Overlap Between Question and Passage: When the question’s phrasing closely matches the passage’s wording—either verbatim or through synonymous expressions—the LLM easily maps the question to a corresponding answer.
+
+- Direct and Explicit Answers in the Passage: Passages that include straightforward yes/no statements, factual affirmations, or categorical definitions (e.g., “X is Y,” “X is not Y”) support high performance by eliminating ambiguity.
+
+- Strong Use of World Knowledge When Reinforced by Text: For well-known facts or trivia (e.g., geography, pop culture, legal systems), the LLM effectively combines prior knowledge with textual confirmation.
+
+- Clear Definitions, Taxonomies, and Equivalence Statements: The model excels when the passage offers explicit definitions or class relationships (e.g., “a mule is a hybrid of a horse and a donkey,” or “garbanzo = chickpea”).
+
+- Proper Noun and Entity Recognition: When prominent names (people, places, shows, countries) are referenced clearly and consistently in the passage, the LLM accurately links them to the question.
+
+- Temporal Reasoning is Effective with Explicit Cues: The LLM successfully handles past/future timelines when the passage provides clear chronological indicators (dates, historical events, fixed seasons/releases).
+
+- Redundancy and Repetition in Passages Aids Confidence: Multiple supporting statements within a passage (e.g., from list items, date confirmations, synonym repetitions) help the model verify answers through cross-referencing.
+
+- Structural Clarity Aids Answer Retrieval: Encyclopedic structure or direct paragraph introductions/conclusions help the model localize key facts quickly and accurately.
+
+Why LLM Gets Questions Wrong:
+
+- Difficulty with Negation and Double Negatives: The model frequently fails to correctly interpret negated phrases or constructions such as “no longer,” “not the same as,” or “none are,” often defaulting to a “Yes” due to surface cues.
+
+- Systematic Confusion with “Same As” and Equivalence Questions: Despite passages asserting equivalence (e.g., “X is also known as Y”), the LLM often answers “No”—particularly when phrasing is hedged (“may be known as”) or lacks a direct structural “X = Y.”
+
+- Misleading Surface Similarity or Keyword Matching: The presence of shared terms between question and passage can cause erroneous “Yes” answers even when logical disconfirmation is present. The LLM over-trusts surface overlap as confirmation.
+
+- Incomplete or Scattered Reasoning Across Sentences: When inference requires synthesizing information from multiple sentences or resolving coreference across a paragraph, the model risks overlooking the logical link, leading to incorrect answers.
+
+- Temporal Misalignment: The LLM frequently fails when the tense of the question (e.g., “Is X still airing?”) does not match the temporal framing of the passage (past tense, hiatus, or cancellation). Ambiguity in time expressions exacerbates this.
+
+- Coreference and Entity Ambiguity: Confusion arises when multiple entities (e.g., multiple people, geographic regions, rebranded items) are mentioned and the model misattributes facts to the wrong one due to pronoun indirection or naming overlap.
+
+- Overgeneralization and Assumed Knowledge: In cases where the passage is vague or nuanced, the LLM over-relies on assumptions or prior beliefs (e.g., "English is the official U.S. language") instead of deferring to passage evidence.
+
+- Weak Handling of Subtle Semantic Contrasts or Hierarchies: The model struggles to distinguish between near-synonyms, subclass relationships, or organizational details (e.g., "Air National Guard" vs. "U.S. Air Force"), often treating them as distinct incorrectly.
+
+- Logical Errors with Conditionals and Exceptions: The LLM often misses exceptions or conditional qualifiers (e.g., “except with permit,” “not in regular circulation”), leading to affirmations where denial is more accurate.
+
+- Confusion Between Fiction and Reality: When fictional stories reference real events or characters (e.g., movies “based on true stories”), the model inconsistently discerns fictionalization vs. real inspiration, often answering “No” due to lack of explicit confirmation.
+
+- Ambiguity in Synonym/Translation/Branding Relationships: The model frequently misinterprets cases involving alternate names, branding (Sierra Mist vs. Mist Twist), or translations (Palma Majorca vs. Palma Mallorca) as different entities.
+
+</hypotheses>

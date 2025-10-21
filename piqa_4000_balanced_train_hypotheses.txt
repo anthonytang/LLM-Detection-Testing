@@ -1,0 +1,42 @@
+<hypotheses>
+Why LLM Gets Questions Right:
+
+- Strong Physical Commonsense and Practical Reasoning: The LLM accurately applies knowledge of physical laws, object affordances, and real-world feasibility (e.g., towels absorb spills, hammers tenderize meat, clamps hold objects steady).
+
+- Familiarity with Everyday Tools and Procedures: It performs well when questions involve common household items, cooking steps, or household routines, often aligning with standard practices (e.g., use of measuring cups, preheating ovens, drying cake pops with air rather than heat).
+
+- Elimination of Implausible or Absurd Options: The LLM effectively rejects nonsensical, dangerous, or clearly impractical answers (e.g., microwaving metal, using fish sauce to thicken chili), especially when those choices violate basic safety or commonsense.
+
+- Understanding of Procedural and Temporal Logic: The model tends to pick answers that follow correct step-by-step reasoning (e.g., “measure then cut,” “drill before inserting screws”), and uses appropriate sequencing for actions like cooking or assembling.
+
+- Surface-Level Fluency and Grammatical Completeness: When one answer is more grammatically correct, fluent, or clear—even if subtly—it often selects that answer correctly.
+
+- Recognition of Familiar Patterns and Semantic Plausibility: When presented with familiar scenarios or goal-action patterns (e.g., drinking water to hydrate, whisking eggs to mix), the model selects answers supported by common experience and typical phrasing.
+
+- Domain-Specific Strength in High-Frequency Topics: It is especially accurate in domains heavily represented in its training data, such as cooking, cleaning, basic repair, and general DIY, where it leverages patterns and learned strategies effectively.
+
+- Use of Safety and Sensibility Bias: The LLM often favors answers aligned with safe, practical, and commonly recommended actions (e.g., do not wrap a hot iron in plastic, avoid using fragile containers for heat).
+
+Why LLM Gets Questions Wrong:
+
+- Overreliance on Lexical or Surface Similarity: The LLM may favor options that closely mirror the question’s wording or structure, even when they are contextually inappropriate or factually incorrect.
+
+- Misinterpretation of Quantities, Measurements, and Timing: The model struggles to distinguish between realistic and unrealistic measurements or time durations (e.g., 2 hours vs. 2 minutes), leading to selection of implausible yet fluent-sounding options.
+
+- Difficulty with Subtle Contrasts and Domain-Specific Distinctions: It often fails to detect nuances between near-synonyms or specialized terminology (e.g., baking powder vs. baking soda, sandpaper vs. sanding compound), especially in niche or technical domains.
+
+- Vulnerability to Ambiguous or Underspecified Prompts: When goal descriptions or instructions are vague or context is sparse (“stick”, “highlighter”, etc.), the LLM may misassign affordances and choose misguided answers.
+
+- Biased Toward Familiar or Frequent Patterns Over Context Accuracy: The model sometimes prefers answers that are more statistically common or canonical—even when incorrect—due to frequency bias (e.g., selecting “gel” for skincare regardless of suitability).
+
+- Misguided by Grammatical Smoothness or Fluency Despite Implausibility: Fluent but incorrect distractors can mislead the LLM into selecting factually wrong options if they are better written than the correct counterpart.
+
+- Poor Handling of Physically Implausible but Textually Plausible Answers: When both answer choices sound grammatically normal, but only one is physically feasible, the LLM may miss the correct answer due to weak physical intuition modeling.
+
+- Difficulty Disambiguating Similar or Overlapping Instructions: Subtle procedural distinctions (e.g., clockwise vs. counterclockwise, top vs. bottom of packaging) are often misinterpreted due to weak fine-grained task understanding.
+
+- Limited Detection of Satire, Sarcasm, or Fictional Reasoning: The LLM may take absurd but well-formed answers at face value if it cannot detect sarcastic tone or satire (e.g., “iron in oven thickens milkshake”).
+
+- Ambiguity in Pronoun Reference and Syntactic Attachments: Errors occasionally stem from misinterpreting who/what pronouns refer to or mishandling embedded clauses or dangling modifiers in longer instructions.
+
+</hypotheses>

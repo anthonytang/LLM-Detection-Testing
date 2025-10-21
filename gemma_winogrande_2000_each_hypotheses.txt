@@ -1,0 +1,54 @@
+<hypotheses>
+Why LLM Gets Questions Right:
+
+- Clear Causal Relationships: The LLM performs well when cause-and-effect connections are explicit and syntactically clear (e.g., “X did Y because _ was tired”), especially when reinforced by cue words like “because”, “so”, or “therefore”.
+
+- Coherence in Syntax and Structure: The model reliably resolves references when grammatical cues (e.g., subject-verb agreement, singular/plural alignment, parallel structures) are clear and unambiguous.
+
+- Leveraging World Knowledge and Stereotypes: The LLM uses general knowledge and common stereotypes effectively (e.g., candles can cause fires, hard luggage protects better than soft, men are more likely to propose), especially when aligned with context.
+
+- Semantic Compatibility and Adjective-Noun Alignment: The model succeeds when trait adjectives logically apply only to one entity (e.g., “the hallway was outside hearing range” → halls are not places people hear).
+
+- Comparative and Superlative Reasoning: When sentences use clear comparative structures (“X is faster than Y because _ trained longer”), the model tends to select the suitable referent based on aligned logical reasoning.
+
+- Pronoun Resolution via Recency and Proximity: The LLM often gets pronoun references right when the correct antecedent is the most recent or closest to the pronoun, especially in well-structured clauses.
+
+- Alignment with Familiar Contrasts and Antonyms: Phrases with natural oppositions (e.g., “healthy vs unhealthy,” “happy vs ashamed”) help the model apply shallow semantic mapping correctly.
+
+- Clause-Local Resolution: When the correct referent is contained within the same or adjacent clause, especially structured with connectives, the LLM performs better.
+
+- Physical Properties or Spatial Constraints: When context involves real-world spatial dimensions (e.g., "fit", "full", "too big"), the model often succeeds based on size, containment, or orientation logic.
+
+Why LLM Gets Questions Wrong:
+
+- Ambiguous Pronoun References with Multiple Candidates: The LLM often fails when resolving “he”, “she”, “they”, or “it” in sentences with multiple plausible referents — especially when both have similar grammatical roles or proximity.
+
+- Causality and Temporal Confusion: The model struggles when causality is implicit, reversed, or spread across multiple events (e.g., “X didn’t help Y because _ was already gone” — confusion about whether cause precedes or follows in timing).
+
+- Negation and Contrast Misinterpretation: Sentences involving negation (“not”, “didn’t”, “never”) or contrastive conjunctions (“but”, “rather than”) often trap the model into reversing agent/action or misjudging sentence logic.
+
+- Overreliance on Linear Order and Recency Heuristics: The LLM often defaults to selecting the first- or last-mentioned entity regardless of logical fit, especially in “A but not B because _...” constructions.
+
+- Pragmatic and Social Inference Failures: The model frequently misses nuanced interpretation based on emotions, social roles, or intentions (e.g., “_ was ashamed to go” — misidentifies cause of shame or who should feel it).
+
+- Misinterpreting Possessives and Ownership: When resolving which person “his” or “her” refers to (especially in sentences with multiple possessives), the LLM often attributes actions or properties to the wrong subject.
+
+- Difficulty with Passive Voice and Sentence Reversals: In passive or non-canonical sentence structures, the LLM may confuse agents and experiencers, particularly when the subject is backgrounded or implied.
+
+- Errors with Physical Object Roles and Properties: The model may misattribute qualities like “too big”, “too small”, or “more efficient” to the wrong object (e.g., choosing the container instead of the content or vice versa).
+
+- Semantic Confusion in Close Paraphrase Options: When both choices are semantically plausible and closely related (e.g., “monitor” vs. “screen”), the model often guesses without strong contextual evidence.
+
+- Challenges with Scalar and Comparative Judgments: The LLM sometimes misaligns properties like “more”, “less”, “better”, particularly in reversed causal structures or when logical comparisons require careful alignment.
+
+- Inconsistent Handling of Plurality and Numeracy: Pronoun plurality and number mismatches confuse the model; it also struggles with quantity-based logic (e.g., “more iron”, “too many books”).
+
+- Misinterpretation of Emotion Sources: The model frequently confuses who feels an emotion and why, especially in emotionally loaded phrases (e.g., “he was afraid because _ screamed”).
+
+- Bias Toward World Knowledge Over Sentence Logic: In the presence of conflicting cues, the LLM often defaults to background knowledge or learned stereotypes rather than the textual evidence, leading to errors.
+
+- Sentence-Level Heuristic Overgeneralization: The LLM applies general rules (e.g., “choose first-mentioned name”, “closer noun is referent”, “object doing the action is subject”) even in contexts where such heuristics mislead.
+
+- Confusion Caused by Non-Canonical Syntax and Ellipsis: Unusual constructions, sentence fragments, or elided references challenge the model’s discourse tracking and clause linkage, resulting in referent misassignment.
+
+</hypotheses>
