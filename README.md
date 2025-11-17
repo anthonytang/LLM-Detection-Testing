@@ -1,20 +1,36 @@
-# Gemma BoolQ Evaluation
+# LLM Detection & Failure Mode Analysis
 
-This repository runs the **Gemma-2-2B** model on a randomly sampled subset of the **BoolQ** dataset to evaluate its question-answering performance.
+This repository contains a comprehensive suite of tools designed to analyze, predict, and understand the failure modes of Large Language Models (specifically **Gemma-2-2B**). The project uses a two-pronged approach:
+1. **Behavioral Analysis:** Generating and testing natural language hypotheses about why the model fails.
+2. **Mechanistic Interpretability:** Extracting and analyzing internal Sparse Autoencoder (SAE) features to understand the neural circuitry behind specific answers.
 
-## Overview
-- **Goal:** Collect the first 2000 correct and 2000 incorrect BoolQ responses from Gemma.  
-- **Model:** Gemma-2-2B  
-- **Dataset:** BoolQ (Boolean question-answer pairs)
+## Supported Datasets
+The framework currently supports the following reasoning datasets:
+- **BoolQ** (Boolean Question Answering)
+- **Winogrande** (Commonsense Reasoning)
+- **PIQA** (Physical Commonsense Reasoning)
 
-## Files
-- **`boolq_dataset.json`** — Contains ~12.5k randomly sampled BoolQ questions.  
-- **`gemma_boolq_answers.json`** — Stores Gemma’s answers, capped at 2000 correct and 2000 incorrect.  
-- **`run_gemma_boolq.py`** — Main script that runs inference and saves results.
+## Project Structure
 
-## Usage
-1. Make sure the Gemma model is already downloaded locally.  
-2. Place `boolq_dataset.json` in the same directory.  
-3. Run:
-   ```bash
-   python run_gemma_boolq.py
+### 1. Behavioral Analysis Pipeline
+These scripts use a "teacher" model (GPT-4o) to analyze the "student" model's (Gemma-2-2B) training data, generate hypotheses about its weaknesses, and predict future errors.
+
+* **`process_all_datasets.py`**: The main entry point for behavioral analysis. It automates the entire pipeline for all supported datasets.
+* **`dataset_processor.py`**: The core logic script. It handles:
+    * Splitting data into Train/Val/Test sets.
+    * Generating failure hypotheses using OpenAI's API.
+    * Evaluating the model's predictions against these hypotheses.
+    * Calculating accuracy metrics.
+
+### 2. Mechanistic Interpretability (SAE)
+These tools dive into the model's internals using Sparse Autoencoders to extract interpretable features from specific layers during inference.
+
+* **`run_sae_feature_extraction.py`**: Runs inference on specific examples (like PIQA) using Gemma-2-2B. It hooks into the model to extract top-k activating features from JumpReLU SAEs across various layers.
+* **`analyze_features.py`**: Enriches the raw SAE feature data by fetching human-readable explanations for features from **Neuronpedia**.
+
+## Installation
+
+Ensure you have Python installed along with the following dependencies:
+
+```bash
+pip install torch transformers openai huggingface_hub neuronpedia numpy tqdm
