@@ -1,0 +1,10 @@
+{
+  "layer": 5,
+  "probe_type": "last",
+  "train_acc": 0.9455,
+  "val_acc": 0.49,
+  "test_acc": 0.494,
+  "train_logloss": 0.17309991131830338,
+  "val_logloss": 2.3182042917188377,
+  "test_logloss": 2.228581218300921
+}
